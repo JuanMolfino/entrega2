@@ -3,10 +3,9 @@ import { doc, getDoc,getFirestore } from "firebase/firestore";
 import { useState, useEffect, useContext } from "react";
 import { CartContext } from "./CartContext";
 
-// Componente Detalle
 function Detalle() {
   const db = getFirestore();
-  const { id } = useParams(); // Desestructuramos id del objeto
+  const { id } = useParams(); 
   const [data, setData] = useState(null);
   const { addToCart } = useContext(CartContext);
 
@@ -18,7 +17,7 @@ function Detalle() {
         if (snapshot.exists()) {
           setData({ ...snapshot.data(), id: snapshot.id });
         } else {
-          setData(null); // O manejar el caso de no encontrar el producto
+          setData(null); 
         }
       } catch (error) {
         console.error("Error fetching product: ", error);
