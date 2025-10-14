@@ -35,7 +35,7 @@ function Detalle() {
     <div>
       <h2>Detalles del producto</h2>
       <h2>{data.nombre}</h2>
-      <img src={data.imagen || ""} alt={data.nombre} />
+      <img src={data.imagen || ""} alt={data.nombre} className="detalle-img" />
       <p>{data.descripcion || "No hay descripción disponible"}</p>
       <h3>${data.precio}</h3>
       <button className="btn" onClick={() => addToCart(data)}>Agregar al carrito</button>

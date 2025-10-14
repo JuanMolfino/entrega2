@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import Swal from "sweetalert2";
 
 export const CartContext = createContext();
 
@@ -10,10 +11,7 @@ export function CartProvider({ children }) {
     console.log("Carrito actual:", cart);
     
     const itemExistente = cart.find((item) => item.id === product.id);
-    console.log("Item existente:", itemExistente);
-    
     if (itemExistente) {
-      console.log("Incrementando cantidad del item existente");
       setCart(
         cart.map((item) =>
           item.id === product.id
@@ -22,8 +20,9 @@ export function CartProvider({ children }) {
         )
       );
     } else {
-      console.log("Agregando nuevo item al carrito");
+      
       setCart([...cart, { ...product, cantidad: 1 }]);
+      
     }
   };
 
@@ -34,6 +33,7 @@ export function CartProvider({ children }) {
   const clearCart = () => setCart([]);
 
   return (
+    //sin esto no funciona el useContext
     <CartContext.Provider value={{ cart, addToCart, removeFromCart, clearCart }}>
       {children}
     </CartContext.Provider>
