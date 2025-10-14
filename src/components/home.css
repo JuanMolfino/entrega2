@@ -1,0 +1,8 @@
+.sectionHome{
+  background: linear-gradient(rgba(255, 248, 231, 0.178), rgba(255, 248, 231, 0.514)), url("https://www.fallenandfelled.co.uk/cdn/shop/collections/live-edge-wood_2600x.jpg?v=1730273459"); 
+  background-size: cover;
+  background-position: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  border-bottom: 1px solid #E5E7EB;
+}
